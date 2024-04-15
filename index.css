@@ -1,0 +1,74 @@
+body{
+    background-color: hsl(0, 0%, 94%);
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.age-calculator{
+    background-color: hsl(0, 0%, 100%);
+    padding: 50px;
+    border-radius: 15px;
+    border-bottom-right-radius: 150px;
+    margin: auto;
+}
+
+.dob-input-section{
+ display: flex;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    font-weight:400;
+}
+
+.entry{
+    font-weight: 700;
+    padding: 10px;
+   
+}
+
+.age-display-section{
+    display: flex;
+    flex-direction: column;
+    font-size: 100px;
+    font-weight: 800;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
