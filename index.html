@@ -14,26 +14,38 @@
 <body>
   <main>
     <div class="age-calculator">
-      <div class="dob-input-section">
-        
+      <form id="form" class="dob-input-section">
         <div class="day input">
           <span class="">Day</span>
-          <input class="day entry" type="text" placeholder="DD">
+          <input class="entry" type="number" id="day" placeholder="DD"  maxlength="2" required>
+          <span class="error-message" id="day-error"></span>
         </div>
+
         <div class="month input">
           <span>Month</span>
-          <input class="month entry" type="text" placeholder="MM">
+          <input class="entry" id="month" type="number" placeholder="MM" maxlength="2" required>
+          <span class="error-message" id="month-error"></span>
         </div>
+
         <div class="year input">
           <span>Year</span>
-          <input class="year entry" type="text" placeholder="YYYY">
+          <input class="entry" id="year" type="number" placeholder="YYYY" maxlength="4" minlength="4" required>
+          <span class="error-message" id="year-error" ></span>
         </div>
+
         
-    
-        
-      </div>
-      <hr>
-      <div class="age-display-section">
+      </form>
+      <button class="calc-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+          <g fill="none" stroke="#FFF" stroke-width="2">
+            <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/>
+          </g>
+        </svg>
+      </button>
+      
+      
+      
+      <div id="age-display" class="age-display-section">
         <div>-- years</div>
         <div>-- months</div>
         <div> -- days</div>
@@ -49,5 +61,6 @@
     Coded by <a href="https://www.linkedin.com/in/ohenenyarko/">Ohene</a>.
   </footer>
   
+  <script src="calculator.js"></script>
 </body>
 </html>

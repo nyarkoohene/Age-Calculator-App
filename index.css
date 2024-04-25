@@ -18,10 +18,20 @@ main{
     border-radius: 15px;
     border-bottom-right-radius: 150px;
     margin: auto;
+    display: flex; /* Add */
+    flex-direction: column; /* Add */
+    align-items: center;
+    
+}
+
+#gen-error{
+    color: rgb(237, 10, 10);
+    font-weight: 400;
 }
 
 .dob-input-section{
  display: flex;
+ margin-bottom: 20px;
 }
 
 .input{
@@ -34,8 +44,32 @@ main{
 .entry{
     font-weight: 700;
     padding: 10px;
-   
+    
 }
+
+.error-message{
+    color: rgb(237, 10, 10);
+    font-weight: 400;  
+}
+.hr {
+  width: 100%; /* Add width to ensure the horizontal line spans the container */
+  border: none;
+  border-top: 1px solid black; /* Add border style for the horizontal line */
+  margin-bottom: 20px;
+}
+
+.calc-btn{
+    background-color: #864cff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.calc-btn :hover{
+    background-color: black;
+}
+
 
 .age-display-section{
     display: flex;
@@ -44,6 +78,9 @@ main{
     font-weight: 800;
    
 }
+
+
+
 
 
 
