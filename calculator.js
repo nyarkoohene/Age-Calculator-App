@@ -57,9 +57,9 @@ calcBtn.addEventListener('click', (event) => {
         }else{
             let ageDisplay= document.getElementById("age-display")
             ageDisplay.innerHTML=`
-            <div>-- years</div>
-            <div>-- months</div>
-            <div> -- days</div>
+            <div><span class="age-results">--</span> years</div>
+            <div><span class="age-results">--</span> months</div>
+            <div><span class="age-results">--</span> days</div>
             `
         }
     } 
@@ -116,9 +116,9 @@ function calculateAge(){
     //Display the calculated Age(Years,Months,Days)
     let ageDisplay= document.getElementById("age-display")
     ageDisplay.innerHTML=`
-        <div>${age} years</div>
-        <div>${months} months</div>
-        <div>${days} days</div>
+        <div><span class="age-results">${age}</span> years</div>
+        <div><span class="age-results">${months}</span> months</div>
+        <div><span class="age-results">${age}</span> days</div>
     `
     
 }

@@ -67,14 +67,15 @@ main{
 }
 
 
-
-
 .age-display-section{
     display: flex;
     flex-direction: column;
     font-size: 100px;
-    font-weight: 800;
-   
+    font-weight: 800; 
+}
+
+.age-results{
+  color: #864cff;
 }
 
 
