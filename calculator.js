@@ -9,73 +9,73 @@ const birthYear =document.getElementById("year")
 //Capture button in variable
 const calcBtn = document.querySelector('.calc-btn');
 
-
 //Add eventlistener to button to trigger validations and age calculation
 calcBtn.addEventListener('click', (event) => {
-  let isValid = true;
+  let Valid = true;
   const todayDate= new Date()
+
+  
   
   // Clear any previous inline error messages
   const errorElements = document.querySelectorAll('.error-message');
   errorElements.forEach(el => el.remove());
 
   //Begin inputs Validation
-  
-  if (true) {
-        //1.  Check for empty fields
-        if (birthDay.value === '') {
-            showError(birthDay, 'This field is required.');
-            isValid = false; 
-        } 
-        
-        if (birthMonth.value === '') {
-            showError(birthMonth, 'This field is required.');
-            isValid = false;
-        }
-        
-        if (birthYear.value === '') {
-            showError(birthYear, 'This field is required.');
-            isValid = false;
-        } 
-
-        //2. Day input Validation. The date entered should be from 1 -31
-        if (parseInt(birthDay.value)< 1 || parseInt(birthDay.value) > 31) {
-            isValid = false;
-            showError(birthDay, 'Please enter a valid day (1-31).');
-        }
-
-        //3. Month input  Validation. Month vaue should be 1-12, rperesenting the months
-        if (parseInt(birthMonth.value) < 1 || parseInt(birthMonth.value) > 12) {
-            isValid = false;
-            showError(birthMonth, 'Please enter a valid month (1-12).');
-        }
-
-        // 4.Year input Validation. 
-        //Lenght of year entered should be 4 characters 
-        if ( birthYear.value.length < 4) {
-            isValid = false;
-            showError(birthYear, 'Please enter a valid year (YYYY).');
-        } 
-        
-        if(parseInt( birthYear.value) >todayDate.getFullYear()){
-            isValid = false;
-            showError(birthYear,'Year can not be in the future');
-        }
-         
-        
-
-        if (isValid) { // Only call calculateAge if validation is successful
-        calculateAge();
-        }else{
-            let ageDisplay= document.getElementById("age-display")
-            ageDisplay.innerHTML=`
-            <div><span class="age-results">--</span> years</div>
-            <div><span class="age-results">--</span> months</div>
-            <div><span class="age-results">--</span> days</div>
-            `
-        }
+    //1.  Check for empty fields
+    if (birthDay.value === '') {
+        showError(birthDay, 'This field is required.');
+        Valid = false; 
     } 
-});
+    
+    if (birthMonth.value === '') {
+        showError(birthMonth, 'This field is required.');
+        Valid = false;
+    }
+    
+    if (birthYear.value === '') {
+        showError(birthYear, 'This field is required.');
+        Valid = false;
+    } 
+
+    //2. Day input Validation. The date entered should be from 1 -31
+    if (parseInt(birthDay.value)< 1 || parseInt(birthDay.value) > 31) {
+        Valid = false;
+        showError(birthDay, 'Please enter a valid day (1-31).');
+    }
+
+    //3. Month input  Validation. Month vaue should be 1-12, rperesenting the months
+    if (parseInt(birthMonth.value) < 1 || parseInt(birthMonth.value) > 12) {
+        Valid = false;
+        showError(birthMonth, 'Please enter a valid month (1-12).');
+    }
+
+    // 4.Year input Validation. 
+    //Lenght of year entered should be 4 characters 
+    if ( birthYear.value.length < 4) {
+        Valid = false;
+        showError(birthYear, 'Please enter a valid year (YYYY).');
+    } 
+    
+    if(parseInt( birthYear.value) >todayDate.getFullYear()){
+        Valid = false;
+        showError(birthYear,'Year can not be in the future');
+    }
+
+    
+
+    if (Valid) { // Only call calculateAge if validation is successful
+
+        calculateAge();
+    }else{
+        let ageDisplay= document.getElementById("age-display")
+        ageDisplay.innerHTML=`
+        <div><span class="age-results">--</span> years</div>
+        <div><span class="age-results">--</span> months</div>
+        <div><span class="age-results">--</span> days</div>
+        `
+    }
+    } 
+);
 
    
 function showError(inputElement, errorMessage) {
@@ -94,8 +94,7 @@ function calculateAge(){
     //Uisng date of birth inputs from form as erguments,establish the users date of birth
     // birthmonth is -1 because in javascript, the months are 0 indexed. January is index 0 and December is index 11
     const birthDate = new Date(birthYear.value, birthMonth.value -1, birthDay.value)
-
-
+    
     //Get user's age as the number of years since the users birth year
     let age = currentDate.getFullYear() - birthDate.getFullYear();
     
